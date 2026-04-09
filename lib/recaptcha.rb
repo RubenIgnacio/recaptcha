@@ -52,8 +52,8 @@ module Recaptcha
   end
 
   def self.skip_env?(env)
-    resolved = env || configuration.default_env
-    resolved ||= Rails.env.to_s if defined?(Rails.env)
+    resolved = env || configuration.default_env ||
+      (defined?(Rails.env) && Rails.env.to_s) # default_env is sometimes not set during initialization
     configuration.skip_verify_env.include?(resolved)
   end
 
