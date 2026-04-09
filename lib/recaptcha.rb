@@ -52,7 +52,9 @@ module Recaptcha
   end
 
   def self.skip_env?(env)
-    configuration.skip_verify_env.include?(env || configuration.default_env)
+    resolved = env || configuration.default_env
+    resolved ||= Rails.env.to_s if defined?(Rails.env)
+    configuration.skip_verify_env.include?(resolved)
   end
 
   def self.invalid_response?(resp)
