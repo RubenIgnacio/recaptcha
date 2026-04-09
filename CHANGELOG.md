@@ -1,5 +1,8 @@
 ## Next
 
+## 5.21.2
+* make env fall back to Rails.env if it is unset
+
 ## 5.21.1
 * Fix flash not being updated when responding to :turbo_stream requests
 

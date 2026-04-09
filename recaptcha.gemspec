@@ -21,5 +21,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "webmock"
   s.add_development_dependency "rubocop"
 
-  s.metadata = { "source_code_uri" => "https://github.com/ambethia/recaptcha" }
+  s.metadata = {
+    "source_code_uri" => "https://github.com/ambethia/recaptcha",
+    "rubygems_mfa_required" => "true"
+  }
 end
